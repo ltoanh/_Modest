@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modest</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Font/FA/css/all.css">
 </head>
 <body>
     <!-- header -->
     <header>
         <div class="container">
             <img src="Image/logo-modest.png" alt="logo-modest">
-            <ul>
+            <ul id="nav_pc">
                 <li class="active">
                     <a href="#Banner">Home</a>
                 </li>
@@ -34,6 +35,40 @@
                     <a href="#Contact">Contact</a>
                 </li>
             </ul>
+            <div style="clear: right;"></div>
+            <label for="check-nav" id="check-btn">
+                <i class="fas fa-bars"></i>          
+            </label>
+            <input type="checkbox" hidden name="" id="check-nav">
+            <label for="check-nav" id="nav_overlay"></label>
+            <div id="nav_mobile">
+                <label for="check-nav">
+                    <i class="fas fa-times"></i>
+                </label>
+                <ul>
+                    <li>
+                        <a href="#Banner">Home</a>
+                    </li>
+                    <li>
+                        <a href="#About">About</a>
+                    </li>
+                    <li>
+                        <a href="#Work">Work</a>
+                    </li>
+                    <li>
+                        <a href="#Team">Team</a>
+                    </li>
+                    <li>
+                        <a href="#Services">Services</a>
+                    </li>
+                    <li>
+                        <a href="#Features">Features</a>
+                    </li>
+                    <li>
+                        <a href="#Contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </header>
     <!-- banner -->
