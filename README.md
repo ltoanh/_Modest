@@ -1,4 +1,4 @@
 # Modest
 PC only, no responsive
 <br>
-+ responsive : <b> >= tablet </b>
++ responsive : chưa đc đẹp cho lắm
