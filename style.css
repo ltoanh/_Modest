@@ -78,7 +78,7 @@ header #nav_pc li{
     margin: -2px 8px;
     border: 2px solid transparent;
 }
-header a{
+header #nav_pc a{
     display: inline-block;
     height: 100%;
     font-family: "OS-SB", sans-serif;
@@ -135,20 +135,22 @@ header #check-btn{
     display: block;
     text-align: center;
     background-color: transparent;
-    border-top: 1px solid #23b7a4;
-
+    border-top: 1px solid #292f36;
 }
 #nav_mobile ul li:first-child{
     margin-top: 30%;
 }
-
+#nav_mobile ul li:last-child{
+    border-bottom: 1px solid #292f36;
+}
 #nav_mobile ul li a{
+    font-family: "OS-SB", sans-serif;
     display: block;
-    font-size: 25px;
+    font-size: 15px;
     color: #292f36;
 }
 #nav_mobile i{
-    top: 20px;
+    top: 10px;
     right: 20px;
     position: absolute;
     transform: translateX(200%);
@@ -170,10 +172,11 @@ header #check-btn{
     height: 660px;
     background: #5b6168 url(Image/bg1.jpg) no-repeat;
     background-size: cover;
-    padding: 225px 0 252px;
+    padding-top: 225px;
 }
 #Banner .container{
     position: relative;
+    height: 100%;
 }
 #Banner h1{
     font-family: "Qua-B", sans-serif;
@@ -182,6 +185,7 @@ header #check-btn{
     color: white;
     text-transform: uppercase;
     padding-bottom: 20px;
+    width: 65%;
 }
 #Banner p{
     width: 55%;
@@ -223,7 +227,7 @@ header #check-btn{
 #Banner-slide{
     display: flex;
     position: absolute;
-    top: 390px;
+    bottom: 30px;
     right: 0;
 }
 #Banner-slide input[type="radio"]{
@@ -290,6 +294,11 @@ header #check-btn{
     font-size: 36px;
     text-transform: uppercase;
 }
+
+#About-connect li:hover{
+    background-color: #d0d5d9;
+    transition: 0.5s;
+}
 /* hieenr thij 01, 02  */
 #About-num { 
     counter-reset: item;
@@ -300,7 +309,7 @@ header #check-btn{
 }
 #About-num>li:before { 
     display: inline-block;
-    content: counter(item, decimal-leading-zero) ""; 
+    content: counter(item, decimal-leading-zero) ""; /*noi dung hien thi */
     counter-increment: item;
     width: 50px;
     height: 50px;
@@ -698,6 +707,9 @@ footer .container ul li a{
     #Team-per>div:hover #Team-mask {
         height: calc(100% - 75px);
     }   
+    #Banner-slide{
+        right: 35px;
+    }
 }
 
 /* 768px -> 960px */
@@ -707,14 +719,21 @@ footer .container ul li a{
     header #nav_pc li{
         padding: 0 5px;
     }
+    header #nav_pc li{
+        margin: 0 5px; 
+    }
     /* banner */
+    #Banner{
+        padding-top: 180px;
+        height: 565px;
+    }
     #Banner-slide span{
         width: 20px;
         height: 20px;
     }
     /* about */
     #About.container>div {
-        grid-template-columns: 5fr 5fr;
+        grid-template-columns: 6fr 5fr;
         grid-gap: 15px;
     }
     /* team */
@@ -727,16 +746,57 @@ footer .container ul li a{
         grid-template-rows: repeat(3,265px);
         grid-gap: 30px;
     }
+    /* Services */
+    #Services.container {
+        padding-bottom: 85px;
+    }
+    #Services.container h2 {
+        margin-bottom: 60px;
+    }
+    #Services.container>div {
+        grid-column-gap: 15px;
+        grid-row-gap: 60px;
+    }
+    /* Features */
+    #Features{
+        padding-bottom: 95px;
+    }
+    #Features .container>div {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3,minmax(100px, auto));
+        grid-gap: 30px;
+    }    
+    #Features .container>div>div{
+        display: grid;
+        grid-template-columns: 6fr 6fr;
+        grid-column-gap: 30px;
+    }
+    #Features .container div div h4{
+        padding-top: 0;
+        font-size: 24px;
+    }
     /* contact */
     #Contact-wrap {
         grid-template-columns: 5fr 7fr;
+        padding-bottom: 40px;
+    }
+    #Contact-wrap div h4,
+    #Contact-wrap div p {
+        margin-bottom: 15px;
+    }
 
+    /* footer */
+    footer .container ul li a{
+        font-size: 40px;
     }
 }
 
 /*  500 -> 768px */
 
 @media (max-width: 768px){
+    .container {
+        padding: 0 30px;
+    }
     /* header */
     header > .container{
         padding: 0 40px;
@@ -759,10 +819,165 @@ footer .container ul li a{
         transform: translateX(0);
         transition: 0.5s;
     }
+    /* Banner */
+    #Banner h1{
+        width: 70%;
+        padding-bottom: 15px;
+    }
+    #Banner p{
+        width: 70%;
+        font-size: 14px;
+    }
+    /* Work */
+    #Work-img>div:hover .Work-mask {
+        background-size: 10%;
+    }
+    /* About */
+    #About.container {
+        padding-bottom: 55px;
+    }
+    #About.container > div{
+        display: block;
+    }
+    #About-connect {
+        padding-top: 25px;
+        padding-bottom: 55px;
+        justify-content: center;
+    }
+    #About.container>div>div>p:last-of-type {
+        padding-top: 15px;
+    }
+    #About-num>li:before {
+        width: 70px;
+        height: 70px;
+        line-height: 70px;
+    }
+    #About-num li{
+        grid-template-columns: 1fr 7fr;
+    }
+    #About-num li div {
+        padding-left: 10px;
+    }
+    #About-num h4{
+        font-size: 22px;
+        padding-bottom: 5px;
+    }
+    /* Team */
+    #Team-mask li{
+        height: 55px;
+        width: 55px;
+        line-height: 55px;
+    }
+    /* Work */
+    #Work-more button{
+        font-size: 15px;
+    }
+    #Work-img>div h4 {
+        font-size: 14px;
+    }
+    /* Services */
+    #Services.container>div {
+        grid-template-columns: 6fr 6fr;
+        grid-column-gap: 30px;
+        grid-row-gap: 50px;
+    }
+    /* Features */
+    #Features .container>div>div {
+        grid-column-gap: 15px;
+    }
+    #Features .container div div h4 {
+        font-size: 20px;
+        line-height: 27px;
+    }
+    #Features .container div div p {
+        font-size: 18px;
+        line-height: 22px;
+    }
+    /* contact */
+    #Contact-wrap{
+        grid-template-columns: 1fr;
+    }
+    #Contact-wrap form {
+        margin-top: 0;
+        border: 2px solid #eaeef1;
+    }
+    #Contact-wrap form label{
+        font-size: 15px;
+    }
 }
 
 /* <= 500px */
 
 @media (max-width: 500px){
+    .container h2 {
+        font-size: 25px;
+    }
+    /* header */
+    #nav_mobile ul li {
+        height: 50px;
+        line-height: 50px;
+    }
+    #nav_mobile i{
+        font-size: 40px;
+    }
+    /* Banner */
+    #Banner h1 {
+        padding-bottom: 5px;
+    }
+    #Banner p {
+        width: 95%;
+        font-size: 12px;
+    }
+    #Banner-slide span {
+        width: 15px;
+        height: 15px;
+    }
+    /* Work */
+    #Work-img {
+        grid-template-columns: 12fr;
+        grid-template-rows: repeat(6,265px);
+    }
+    /* Team */
+    #Team-per {
+        grid-template-columns: 12fr;
+    }
+    
+    /* Features */
+    #Features .container>div>div{
+        grid-template-columns: 12fr;
+    }
+    #Features .container div div h4{
+        font-size: 17px;
+        padding-top: 10px;
+    }
+    #Features .container div div p {
+        font-size: 13px;
+    }
+    /* Services */
+    .Services-inf h4 {
+        font-size: 13px;
+        padding-bottom: 5px;
+    }
+    .Services-inf p {
+        font-size: 10px;
+        line-height: 20px;
+        color: #8d8f92;
+    }
+    /* contact */
+    #Contact {
+        background-size: 100% 200px;
+    }
+    #Contact-wrap>div {
+        margin-top: 215px;
+    }
+    /* footer */
+    footer p {
+        font-family: "OS-R", sans-serif;
+        font-size: 7px;
+        color: #fff;
+    }
+    footer .container ul li a {
+        font-size: 38px;
+    }
 
 }
