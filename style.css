@@ -23,6 +23,10 @@
     font-family: "Qua-B";
 }
 @font-face{
+    src: url(Font/QuattrocentoSans-Regular.ttf);
+    font-family: "Qua-R";
+}
+@font-face{
     src: url(Font/Socialico.ttf);
     font-family: "Social";
 }
@@ -122,14 +126,13 @@ header #check-btn{
 }
 #nav_mobile ul{
     position: fixed;
-    transform: translateX(100%);
+    transform: translateX(100000px);
     height: 100vh;
     width: 60%;
     top: 0;
     right: 0;
     background-color: white;
     z-index: 1;
-    transition: 0.5s;
 }
 #nav_mobile ul li{
     display: block;
@@ -323,9 +326,11 @@ header #check-btn{
 #About-num li div{
     display: inline-block;
 }
-#About-num h4{
-    font-family: "Qua-B", sans-serif;
+#About-num h4 {
+    font-family: "Qua-R", sans-serif;
     font-size: 18px;
+    word-spacing: 0px;
+    font-weight: normal;
     text-transform: uppercase;
     padding-bottom: 15px;
 }
@@ -441,7 +446,7 @@ header #check-btn{
 }
 #Work-img>div h4{
     position: absolute;
-    top: 0;
+    bottom: 0;
     height: 60px;
     line-height: 60px;
     width: 100%;
@@ -453,7 +458,7 @@ header #check-btn{
     text-transform: uppercase;
     z-index: 1;
 }
-#Work-img img{
+#Work-img>img{
     display: block;
     height: 265px;
     width: 100%;
@@ -462,26 +467,29 @@ header #check-btn{
 .Work-mask{
     position: absolute;
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background: transparent;
-    background-repeat: no-repeat;
-    background-position: top center;
-
+}
+.Work-mask img{
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% - 30px));
 }
 #Work-img>div:hover h4{
     background-color: #292f36;
     color: white;
     transition: 0.5s;
-    bottom: 0;
-    top: calc(100% - 60px);
 }
-
 #Work-img>div:hover .Work-mask{
-    background: url(Image/Icon/ho-ic-plus.png) no-repeat;
-    background-position: 50% calc(50% - 30px);
     background-color: rgba(41, 47, 54, .5);
     transition: 0.5s;
+}
+#Work-img>div:hover .Work-mask img{
+    display: block;
 }
 #Work-more{
     padding: 62px 0;
@@ -651,7 +659,7 @@ header #check-btn{
     width: 100%;
     height: 160px;
     margin-bottom: 24px;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 #Contact-btn button{
     display: block;
@@ -813,11 +821,9 @@ footer .container ul li a{
     }
     header input[type="checkbox"]:checked ~ #nav_mobile>ul{
         transform: translateX(0);
-        transition: 0.5s;
     }
     header input[type="checkbox"]:checked ~ #nav_mobile i{
         transform: translateX(0);
-        transition: 0.5s;
     }
     /* Banner */
     #Banner h1{
