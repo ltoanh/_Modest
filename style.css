@@ -987,10 +987,18 @@ footer .container ul li a{
         margin-top: 215px;
     }
     /* footer */
+    footer .container {
+        display: block;
+    }
     footer p {
         font-family: "OS-R", sans-serif;
-        font-size: 7px;
+        font-size: 13px;
+        line-height: 30px;
+        padding-top: 10px;
         color: #fff;
+    }
+    footer .container ul li:first-child {
+        margin-left: 0;
     }
     footer .container ul li a {
         font-size: 38px;
