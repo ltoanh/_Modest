@@ -1,4 +1,4 @@
 # Modest
 PC only, no responsive
 <br>
-Đang fix responsive
+<b>respon cho màn >=300px</b>
