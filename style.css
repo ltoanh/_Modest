@@ -356,7 +356,7 @@ header #check-btn{
     width: 100%;
     background-color: #d4dade;
 }
-#Team-per>div{
+#Team-per>label{
     position: relative;
 }
 .Team-inf{
@@ -385,6 +385,15 @@ header #check-btn{
 .Team-mask-mobi{
     display: none;
 }
+.Team_overlay{
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.4);  
+}
 .Team-mask ul, .Team-mask-mobi ul{
     display: flex;
     height: 100%;
@@ -412,21 +421,21 @@ header #check-btn{
 .Team-mask li:hover{
     background-color: #4e5a62;
 }
-#Team-per>div:hover .Team-mask{
+#Team-per>label:hover .Team-mask{
     position: absolute;
     display: block;
     width: 100%;
     top: 0;
     background-color: rgba(255, 255, 255, .4);
 }
-#Team-per>div:hover .Team-inf{
+#Team-per>label:hover .Team-inf{
     background-color: #3a454d;
 
 }
-#Team-per>div:hover .Team-inf h4{
+#Team-per>label:hover .Team-inf h4{
     color: white; 
 }
-#Team-per>div:hover .Team-inf p{
+#Team-per>label:hover .Team-inf p{
     color: white; 
 }
 /* Work */
@@ -479,6 +488,9 @@ header #check-btn{
     width: 100%;
     height: calc(100% - 60px);
     background: transparent;
+}
+.Work-mask-mobi{
+    display: none;
 }
 .Work-mask img{
     display: none;
@@ -742,47 +754,27 @@ footer .container ul li a{
 
     /* team */
     #Team-per {
-        grid-template-columns: repeat(2,6fr);
-        position: relative;
+        grid-template-columns: repeat(4,3fr);
     }
-    #Team-per>div {
-        height: 195px;
-    }
-    #Team-per img {
-        position: absolute;
-        width: auto;
-        height: 100%;
-        border-radius: 20px 70px;
-    }
-    .Team-inf {
-        height: 100%;
-        border-radius: 30px 10px 10px 100px;
-        text-align: right;
-        padding-top: 2%;
-        padding-right: 5%;
-    }
-    .Team-inf h4 {
-        font-size: 20px;
-    }
-    .Team-inf p {
-        font-size: 15px;
-    }
-    #Team-per>div:hover .Team-mask {
+    #Team-per>label:hover .Team-mask {
         display: none;
     }
-    .Team-mask-mobi{
+    .Team-mask-mobi {
         display: inline-block;
         position: absolute;
         z-index: 2;
-        bottom: 60px;
-        right: 65px;
+        width: 100%;
+        height: 100%;
     }
     input[type="checkbox"]{
         display: none;
     }
-    .fl-team{
+    .fl-team {
         display: inline-block;
         position: absolute;
+        top: 5%;
+        right: 5%;
+        z-index: 2;
     }
     .fl-team label i{
         z-index: 1;
@@ -810,20 +802,20 @@ footer .container ul li a{
         color: white;
     }
     
-    #Team-per>div:hover .Team-inf {
+    #Team-per>label:hover .Team-inf {
         background-color: #e1e6ea;
     }
-    #Team-per>div:hover .Team-inf h4 {
+    #Team-per>label:hover .Team-inf h4 {
         color: #292f36;
     }
-    #Team-per>div:hover .Team-inf p {
+    #Team-per>label:hover .Team-inf p {
         color: #8d8f92;
     }
     #check-fl-1:checked + .fl-team .social-mobi li:nth-child(1),
     #check-fl-2:checked + .fl-team .social-mobi li:nth-child(1),
     #check-fl-3:checked + .fl-team .social-mobi li:nth-child(1),
     #check-fl-4:checked + .fl-team .social-mobi li:nth-child(1){
-        left: -60px;
+        left: -70px;
         bottom: 0;
         transition: 0.5s;
     
@@ -832,7 +824,7 @@ footer .container ul li a{
     #check-fl-2:checked + .fl-team .social-mobi li:nth-child(2),
     #check-fl-3:checked + .fl-team .social-mobi li:nth-child(2),
     #check-fl-4:checked + .fl-team .social-mobi li:nth-child(2){
-        top: -60px;
+        top: 70px;
         right: 0;
         transition: 0.5s;
     
@@ -841,12 +833,54 @@ footer .container ul li a{
     #check-fl-2:checked + .fl-team .social-mobi li:nth-child(3),
     #check-fl-3:checked + .fl-team .social-mobi li:nth-child(3),
     #check-fl-4:checked + .fl-team .social-mobi li:nth-child(3){
-        left: -55px;
-        top: -55px;
+        left: -65px;
+        top: 65px;
         transition: 0.5s;
     }
-
-
+    #check-fl-1:checked  ~ .Team_overlay,
+    #check-fl-2:checked  ~ .Team_overlay,
+    #check-fl-3:checked  ~ .Team_overlay,
+    #check-fl-4:checked  ~ .Team_overlay{
+        display: block;
+    }
+    /* Work */
+    #Work-img>div h4 {
+        display: block;
+    }
+    #Work-img>div:hover .Work-mask {
+        display: none;
+    }
+    .Work-mask-mobi{
+        display: block;
+        width: 100px;
+        height: 60px;
+        border-radius: 0 999px 999px 0;
+        box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.3);
+        background-color: teal;
+        position: absolute;
+        top: 15px;
+        left: -3px;
+        z-index: 3;
+    }
+    .Mobi_overlay{
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+    }
+    .Work-mask-mobi>img{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .Work-mask-mobi:hover + .Mobi_overlay{
+        background-color: rgba(0, 0, 0, 0.3);
+        z-index: 2;
+    }
     /* Servicesw */
     #Services.container {
         padding-bottom: 80px;
@@ -924,10 +958,7 @@ footer .container ul li a{
         grid-gap: 15px;
     }
     /* team */
-    #Team-per {
-        grid-template-columns: repeat(2,12fr);
-    }
-    
+
     /* Work */
     
     /* Services */
@@ -974,9 +1005,9 @@ footer .container ul li a{
     }
 }
 
-/*  640 -> 768px */
+/*  500 -> 768px */
 
-@media (max-width: 768px){
+@media (max-width: 795px){
     .container {
         padding: 0 30px;
     }
@@ -1053,26 +1084,7 @@ footer .container ul li a{
     }
     /* Team */
     #Team-per {
-        grid-template-columns: repeat(1,12fr);
-    }
-    #check-fl:checked + .fl-team .social-mobi li:nth-child(1){
-        left: -60px;
-        bottom: 0;
-        transition: 0.5s;
-    
-    }
-    #check-fl:checked + .fl-team  .social-mobi li:nth-child(2){
-        left: -120px;
-        top: 0;
-        bottom: 0;
-        transition: 0.5s;
-    
-    }
-    #check-fl:checked + .fl-team  .social-mobi li:nth-child(3){
-        left: -180px;
-        top: 0;
-        bottom: 0;
-        transition: 0.5s;
+        grid-template-columns: repeat(2,6fr);
     }
     /* Work */
     #Work-more button{
@@ -1122,6 +1134,12 @@ footer .container ul li a{
 
 /* 500px -> 640px */
 @media (max-width: 640px){
+    /* Work */
+    #Work-img {
+        grid-template-columns: repeat(1,12fr);
+        grid-gap: 15px;
+    }
+    /* Features */
     #Features .container>div>div {
         grid-template-columns: 12fr;
     }
@@ -1196,7 +1214,7 @@ footer .container ul li a{
     footer p {
         font-family: "OS-R", sans-serif;
         font-size: 13px;
-        line-height: 30px;
+        line-height: 22px;
         padding-top: 10px;
         color: #fff;
     }
