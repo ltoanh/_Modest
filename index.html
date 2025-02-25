@@ -23,16 +23,16 @@
             <img src="Image/logo-modest.png" alt="logo-modest">
             <ul id="nav_pc">
                 <li class="active">
-                    <a href="#Banner">Home</a>
+                    <a id="banner1" href="#Banner">Home</a>
                 </li>
                 <li>
-                    <a href="#About">About</a>
+                    <a id="about1" href="#About">About</a>
                 </li>
                 <li>
-                    <a href="#Work">Work</a>
+                    <a id="work1" href="#Work">Work</a>
                 </li>
                 <li>
-                    <a href="#Team">Team</a>
+                    <a id="team1" href="#Team">Team</a>
                 </li>
                 <li>
                     <a href="#Services">Services</a>
@@ -545,5 +545,15 @@
             </ul>
         </div>
     </footer>
+<script>
+document.getElementById('banner1').addEventListener('click', function() {
+  gtag('event', 'click_banner1', {
+    'link_id': 'banner1',
+    'link_text': 'Click vô banner'
+  });
+
+    console.log('click banner');
+});
+</script>
 </body>
 </html>
