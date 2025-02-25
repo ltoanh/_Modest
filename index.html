@@ -14,7 +14,6 @@
       gtag('js', new Date());
     
       gtag('config', 'G-EWNGB1ERWX');
-         gtag('event', 'test_event_1_no_params');
     </script>
 </head>
 <body>
@@ -548,9 +547,27 @@
     </footer>
 <script>
 document.getElementById('banner1').addEventListener('click', function() {
-      gtag('event', 'click_banner1');
+      gtag('event', 'click_banner1', {
+       "link_id": "banner"   
+      });
 
     console.log('click banner');
+});
+
+document.getElementById('about1').addEventListener('click', function() {
+      gtag('event', 'click_about1', {
+       "link_id": "about"   
+      });
+
+    console.log('click about1');
+});
+
+document.getElementById('work1').addEventListener('click', function() {
+  gtag('event', 'click_work1', {
+   "link_id": "work"   
+  });
+
+console.log('click work');
 });
 </script>
 </body>
