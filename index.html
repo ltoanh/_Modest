@@ -17,10 +17,8 @@
           user_id: crypto.randomUUID() // generate userid
         });
         // bổ sung thêm thông tin người dùng
-        gtag('set', 'user_properties', {
-          database_id: crypto.randomUUID(),
-          profile_id: Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000
-        });
+        window.database_id = crypto.randomUUID();
+        window.profile_id = Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
     </script>
 </head>
 <body>
@@ -555,7 +553,8 @@
 <script>
 document.getElementById('banner1').addEventListener('click', function() {
       gtag('event', 'click_banner1', {
-       "link_id": "banner"   
+          "database_id": window.database_id,
+          "profile_id": window.profile_id
       });
 
     console.log('click banner');
@@ -563,7 +562,8 @@ document.getElementById('banner1').addEventListener('click', function() {
 
 document.getElementById('about1').addEventListener('click', function() {
       gtag('event', 'click_about1', {
-       "link_id": "about"   
+          "database_id": window.database_id,
+          "profile_id": window.profile_id  
       });
 
     console.log('click about1');
@@ -571,7 +571,8 @@ document.getElementById('about1').addEventListener('click', function() {
 
 document.getElementById('work1').addEventListener('click', function() {
   gtag('event', 'click_work1', {
-   "link_id": "work"   
+    "database_id": window.database_id,
+    "profile_id": window.profile_id
   });
 
 console.log('click work');
