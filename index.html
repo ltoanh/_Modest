@@ -16,6 +16,11 @@
       gtag('config', 'G-EWNGB1ERWX', {
           user_id: crypto.randomUUID() // generate userid
         });
+        // bổ sung thêm thông tin người dùng
+        gtag('set', 'user_properties', {
+          database_id: crypto.randomUUID(),
+          profile_id: Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000
+        });
     </script>
 </head>
 <body>
